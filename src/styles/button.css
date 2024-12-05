@@ -1,6 +1,6 @@
 .button-component {
    position: absolute;
-   margin-bottom: 3.35vw;
+   margin-bottom: 1vw;
    bottom: 0;
    right: 0;
    display: flex;
@@ -27,11 +27,6 @@
    border: 2px solid #FF4B97;
 }
 
-/* Optional: Add styling for the checked state */
-.button-component input[type="checkbox"]:checked+label::after {
+.checkbox-container .checkbox-image {
    position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
 }
