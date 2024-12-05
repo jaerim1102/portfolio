@@ -10,7 +10,7 @@ const Home = () => {
     const totalChars = texts.join("").length; // 모든 글자의 개수
     const intervalId = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % totalChars); // 전체 글자 반복
-    }, 300); // 300ms 간격
+    }, 150); // 300ms 간격
 
     return () => clearInterval(intervalId); // 컴포넌트 언마운트 시 정리
   }, [texts]);

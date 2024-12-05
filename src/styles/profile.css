@@ -1,0 +1,44 @@
+.main-profile {
+   margin-top: 11vh;
+
+}
+
+.main-profile h2 {
+   font-size: 2vw;
+   font-weight: 500;
+   border-bottom: 1.75px solid #000;
+   margin-bottom: 3vw;
+   padding-bottom: 1vw;
+}
+
+.main-profile span,
+.main-profile p {
+   font-size: 1.3vw;
+}
+
+.main-profile span {
+   font-weight: 400;
+   margin-right: 20vw;
+}
+
+.main-profile p {
+   font-weight: 700;
+}
+
+.profile-content {
+   margin-bottom: 3vw;
+}
+
+.profile-content div {
+   display: flex;
+   justify-content: flex-start;
+   margin-bottom: 2.5vw;
+}
+
+
+.profile-education div {
+   display: flex;
+   justify-content: flex-start;
+
+   margin-bottom: 2.5vw;
+}
