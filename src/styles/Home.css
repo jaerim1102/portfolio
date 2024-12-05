@@ -29,6 +29,20 @@
    text-shadow: -9px 0px #FF4B97, 0px 9px #FF4B97, 9px 0px #FF4B97, 0px -9px #FF4B97;
 }
 
+.home-serve-title span span {
+   display: inline-block;
+   transition: transform 0.3s ease, opacity 0.3s ease;
+   transform: translateY(0);
+}
+
+.home-serve-title span span.active {
+   transform: translateY(-10px);
+   /* 튀어오름 */
+   opacity: 1;
+   /* 완전한 불투명도 */
+}
+
+
 .home-serve-title>span:nth-child(1) {
    margin-top: 4vw;
    margin-left: 9vw;
