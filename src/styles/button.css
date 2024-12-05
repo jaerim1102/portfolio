@@ -1,0 +1,37 @@
+.button-component {
+   position: absolute;
+   margin-bottom: 3.35vw;
+   bottom: 0;
+   right: 0;
+   display: flex;
+   flex-direction: column;
+}
+
+.button-component input[type="checkbox"] {
+   display: none;
+}
+
+.button-component label {
+   margin-top: 1vw;
+   width: 2vw;
+   height: 2vw;
+   border-radius: 50%;
+   border: 2px solid #000;
+   background-color: transparent;
+   display: inline-block;
+   cursor: pointer;
+}
+
+.button-component input[type="checkbox"]:checked+label {
+   background-color: #FF4B97;
+   border: 2px solid #FF4B97;
+}
+
+/* Optional: Add styling for the checked state */
+.button-component input[type="checkbox"]:checked+label::after {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+}

@@ -1,6 +1,13 @@
 .main-profile {
-   margin-top: 11vh;
+   margin-top: 25vh;
+   display: flex;
+}
 
+.main-profile img {
+   width: 38vw;
+   height: fit-content;
+   margin-right: 5vw;
+   margin-top: 2.5vw;
 }
 
 .main-profile h2 {
@@ -8,37 +15,59 @@
    font-weight: 500;
    border-bottom: 1.75px solid #000;
    margin-bottom: 3vw;
-   padding-bottom: 1vw;
+   padding-bottom: 0.5vw;
 }
 
 .main-profile span,
 .main-profile p {
-   font-size: 1.3vw;
-}
-
-.main-profile span {
-   font-weight: 400;
-   margin-right: 20vw;
+   font-size: 1vw;
+   margin-bottom: 1.5vw;
 }
 
 .main-profile p {
-   font-weight: 700;
+   font-weight: 600;
 }
 
-.profile-content {
-   margin-bottom: 3vw;
+.profile-left {
+   margin-right: 2vw;
 }
 
-.profile-content div {
+.profile-content,
+.profile-education {
+   margin-bottom: 2vw;
    display: flex;
-   justify-content: flex-start;
-   margin-bottom: 2.5vw;
+}
+
+.profile-details,
+.education-details,
+.awards-details {
+   display: flex;
+   flex-direction: column;
+}
+
+.profile {
+   width: 47vw;
+}
+
+.education,
+.awards {
+   margin-top: 2.5vw;
+   width: 34vw;
+   margin-left: 13vw;
 }
 
 
-.profile-education div {
-   display: flex;
-   justify-content: flex-start;
+.profile span {
+   font-weight: 400;
+   margin-right: 10vw;
+}
 
-   margin-bottom: 2.5vw;
+.education span,
+.awards span {
+   margin-right: 10vw;
+}
+
+.profile-img {
+   position: relative;
+   display: flex;
 }
