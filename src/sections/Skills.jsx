@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import pb from "../lib/pocketbase"; // pocketbase 클라이언트 인스턴스
+import pb from "../lib/pocketbase";
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
@@ -23,9 +23,8 @@ const Skills = () => {
       <div>
         {skills.map((skill) => (
           <div key={skill.id}>
-            {/* skill_img가 URL을 담고 있는 텍스트 필드일 경우 */}
+            {/* skill_img가 파일 필드일 경우 */}
             <img src={pb.getFileUrl(skill, skill.skill_img)} alt={skill.name} />
-
             <p>{skill.name}</p>
           </div>
         ))}
