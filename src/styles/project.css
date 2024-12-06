@@ -1,0 +1,11 @@
+.project-container {
+   margin-top: 8vw;
+}
+
+.project-container h2 {
+   font-size: 2vw;
+   font-weight: 500;
+   border-bottom: 1.75px solid #555;
+   padding-bottom: 0.5vw;
+   margin-bottom: 2.5vw;
+}

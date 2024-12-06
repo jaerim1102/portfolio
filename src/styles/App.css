@@ -2,3 +2,9 @@ body {
    margin-left: 3vw;
    margin-right: 3vw;
 }
+
+@media (max-width: 750px) {
+   .main {
+      display: none;
+   }
+}
