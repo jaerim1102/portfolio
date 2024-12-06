@@ -1,48 +1,95 @@
-/* 테이블 스타일 */
+.skill-component {
+   margin-top: 10vw;
+}
+
+.section-title {
+   margin-bottom: 5vw;
+}
+
+.section-title h2 {
+   font-size: 2vw;
+   font-weight: 500;
+   border-bottom: 1.75px solid #555;
+   padding-bottom: 0.5vw;
+   margin-bottom: 2.5vw;
+}
+
+.section-title p {
+   font-size: 0.9vw;
+   font-weight: 400;
+   text-align: right;
+   line-height: 150%;
+   color: #555;
+}
+
 table {
    width: 100%;
    border-collapse: collapse;
-   margin: 20px 0;
 }
 
 td {
-   border: 1px solid #ddd;
-   padding: 10px;
-   text-align: center;
+   vertical-align: top;
+   border-top: 1.75px solid #000;
+   border-bottom: 1.75px solid #000;
+   font-size: 1vw;
 }
 
 .skill-img {
-   width: 50px;
-   height: 50px;
-   border-radius: 4px;
-   object-fit: cover;
+   width: 10vw;
+   height: 10vw;
+   object-fit: contain;
 }
 
-/* 프로그레스 바 스타일 */
+.skill-img-td {
+   border: 1.75px solid #000;
+}
+
+.skill-name {
+   padding-top: 2vw;
+   padding-left: 3vw;
+}
+
+
+.skill-ex {
+   font-size: 0.8vw;
+   padding: 2vw 3vw;
+   line-height: 150%;
+   text-align: left;
+}
+
+
+/* 프로그래스 */
+.progress-td {
+   padding-left: 5vw;
+   padding-top: 2vw;
+   text-align: center;
+}
+
 .progress-bar {
    position: relative;
-   width: 150px;
-   /* 프로그레스 바 너비 */
+   width: 12vw;
    height: 20px;
-   /* 프로그레스 바 높이 */
    background-color: #ddd;
-   /* 배경 색상 */
-   border-radius: 10px;
-   /* 둥근 모서리 */
    overflow: hidden;
 }
 
 .progress-bar-fill {
    height: 100%;
-   background-color: #4caf50;
-   /* 채워지는 부분 색상 */
-   transition: width 0.5s ease;
-   /* 부드러운 애니메이션 */
+   background-color: #FF4B97;
+   width: 0%;
+   /* 기본 상태 */
+   transition: width 2s ease;
+   /* 애니메이션 추가 */
+}
+
+.progress-bar-fill-animate {
+   transition: width 2s ease;
+   /* 애니메이션 시작 시 적용 */
 }
 
 .proficiency-text {
-   margin-top: 5px;
-   font-size: 12px;
+   margin-top: 1vh;
+   font-size: 0.8vw;
    color: #555;
    display: block;
 }
