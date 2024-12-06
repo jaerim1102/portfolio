@@ -1,3 +1,48 @@
-.skill-component {
-   margin-top: 9vh;
+/* 테이블 스타일 */
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin: 20px 0;
+}
+
+td {
+   border: 1px solid #ddd;
+   padding: 10px;
+   text-align: center;
+}
+
+.skill-img {
+   width: 50px;
+   height: 50px;
+   border-radius: 4px;
+   object-fit: cover;
+}
+
+/* 프로그레스 바 스타일 */
+.progress-bar {
+   position: relative;
+   width: 150px;
+   /* 프로그레스 바 너비 */
+   height: 20px;
+   /* 프로그레스 바 높이 */
+   background-color: #ddd;
+   /* 배경 색상 */
+   border-radius: 10px;
+   /* 둥근 모서리 */
+   overflow: hidden;
+}
+
+.progress-bar-fill {
+   height: 100%;
+   background-color: #4caf50;
+   /* 채워지는 부분 색상 */
+   transition: width 0.5s ease;
+   /* 부드러운 애니메이션 */
+}
+
+.proficiency-text {
+   margin-top: 5px;
+   font-size: 12px;
+   color: #555;
+   display: block;
 }
