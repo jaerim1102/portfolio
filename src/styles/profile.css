@@ -1,6 +1,8 @@
 .main-profile {
    margin-top: 25vh;
    display: flex;
+   margin-left: 3vw;
+   margin-right: 3vw;
 }
 
 .main-profile img {

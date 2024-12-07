@@ -1,5 +1,5 @@
 .project-container {
-   margin-top: 8vw;
+   margin-top: 10vw;
 }
 
 .project-container h2 {
@@ -7,5 +7,12 @@
    font-weight: 500;
    border-bottom: 1.75px solid #555;
    padding-bottom: 0.5vw;
-   margin-bottom: 2.5vw;
+   padding-left: 3vw;
+}
+
+.project-content {
+   height: 50vw;
+   background-image: url('../../public/assets/img/bgi.png');
+   background-repeat: no-repeat;
+   background-size: cover;
 }

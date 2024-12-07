@@ -1,5 +1,6 @@
 .skill-component {
    margin-top: 10vw;
+   overflow: hidden;
 }
 
 .section-title {
@@ -12,6 +13,7 @@
    border-bottom: 1.75px solid #555;
    padding-bottom: 0.5vw;
    margin-bottom: 2.5vw;
+   padding-left: 3vw;
 }
 
 .section-title p {
@@ -20,10 +22,12 @@
    text-align: right;
    line-height: 150%;
    color: #555;
+   margin-right: 3vw;
 }
 
 table {
-   width: 100%;
+   margin-left: 3vw;
+   width: 100vw;
    border-collapse: collapse;
 }
 
@@ -55,6 +59,7 @@ td {
    padding-top: 2vw;
    line-height: 150%;
    text-align: left;
+   padding-right: 5.5vw;
 }
 
 
