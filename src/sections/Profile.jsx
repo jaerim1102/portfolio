@@ -3,9 +3,9 @@ import "../styles/profile.css";
 import ProfileImg from "../../public/assets/img/profile-img.png";
 import ProfileButton from "../components/ProfileButton";
 
-const Profile = () => {
+const Profile = ({ id }) => {
   return (
-    <div className="main-profile">
+    <div id={id} className="main-profile">
       <div className="profile-left">
         <div className="profile">
           <h2>Profile</h2>

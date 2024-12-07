@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
 
-const Home = () => {
+const Home = ({ id }) => {
   const [activeIndex, setActiveIndex] = useState(0); // 활성화된 글자의 전역 인덱스
 
   const texts = ["2024", "PORTFOLIO", "S2"]; // 애니메이션 대상 텍스트
@@ -38,7 +38,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home-title">
+    <div id={id} className="home-title">
       <div className="home-serve-title">{renderTextWithAnimation()}</div>
 
       <h1>

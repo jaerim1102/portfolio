@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import pb from "../lib/pocketbase";
 import "../styles/skills.css";
 
-const Skills = () => {
+const Skills = ({ id }) => {
   const [skills, setSkills] = useState([]);
   const [visible, setVisible] = useState(false); // 섹션이 뷰포트에 들어왔는지 여부
   const sectionRef = useRef(null); // 섹션 DOM 참조
@@ -44,7 +44,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="skill-component">
+    <div id={id} ref={sectionRef} className="skill-component">
       <div className="section-title">
         <h2>Skills</h2>
         <p>
