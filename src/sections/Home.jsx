@@ -4,7 +4,7 @@ import "../styles/Home.css";
 const Home = ({ id }) => {
   const [activeIndex, setActiveIndex] = useState(0); // 활성화된 글자의 전역 인덱스
 
-  const texts = ["2024", "PORTFOLIO", "S2"]; // 애니메이션 대상 텍스트
+  const texts = ["2025", "PORTFOLIO", "S2"]; // 애니메이션 대상 텍스트
 
   useEffect(() => {
     const totalChars = texts.join("").length; // 모든 글자의 개수
