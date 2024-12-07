@@ -4,26 +4,21 @@ import "../styles/menu.css";
 
 const Menu = () => {
   return (
-    <div className="menu">
+    <div className="menu-component">
       <ul>
         <li>
-          <Link to="section1" smooth={true} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li>
           <Link to="section2" smooth={true} duration={500}>
-            Profile
+            INTRODUCE ME
           </Link>
         </li>
         <li>
           <Link to="section3" smooth={true} duration={500}>
-            Project
+            PROJECT
           </Link>
         </li>
         <li>
           <Link to="section4" smooth={true} duration={500}>
-            Skills
+            SKILLS
           </Link>
         </li>
       </ul>

@@ -1,0 +1,17 @@
+.menu-component {
+   position: absolute;
+   right: 0;
+   margin-right: 1vw;
+   font-size: 1.6vw;
+   font-weight: 500;
+}
+
+.menu-component li {
+   border-bottom: 2.3px solid #000;
+   margin-bottom: 1vw;
+   cursor: pointer;
+}
+
+.menu-component li:hover {
+   color: #FF4B97;
+}
