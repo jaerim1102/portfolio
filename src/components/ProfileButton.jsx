@@ -13,12 +13,12 @@ const ProfileButton = () => {
 
   // 이미지 URL을 설정할 객체
   const imageUrls = {
-    checkbox1: "../../public/assets/img/button1-active.png",
-    checkbox2: "../../public/assets/img/button2-active.png",
-    checkbox3: "../../public/assets/img/button3-active.png",
-    checkbox4: "../../public/assets/img/button4-active.png",
-    checkbox5: "../../public/assets/img/button5-active.png",
-    checkbox6: "../../public/assets/img/button6-active.png",
+    checkbox1: "/assets/img/button1-active.png",
+    checkbox2: "/assets/img/button2-active.png",
+    checkbox3: "/assets/img/button3-active.png",
+    checkbox4: "/assets/img/button4-active.png",
+    checkbox5: "/assets/img/button5-active.png",
+    checkbox6: "/assets/img/button6-active.png",
   };
 
   const imageStyles = {
