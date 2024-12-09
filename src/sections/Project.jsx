@@ -53,6 +53,7 @@ const Project = () => {
           <div key={project.id} className="project-card">
             <p className="project-time">{project.Project_time}</p>
             <h2>{project.project_name}</h2>
+            <p className="project-ex">{project.project_explanation}</p>
             <img
               src={pb.getFileUrl(project, project.project_img)}
               alt={project.project_name}
