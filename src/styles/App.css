@@ -1,7 +1,19 @@
-/* body {
-   margin-left: 3vw;
-   margin-right: 3vw;
-} */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
+body {
+   font-family: Pretendard,
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      Roboto,
+      'Helvetica Neue',
+      'Segoe UI',
+      'Apple SD Gothic Neo',
+      'Noto Sans KR',
+      'Malgun Gothic',
+      sans-serif;
+}
 
 @media (max-width: 750px) {
    .main {
