@@ -14,13 +14,42 @@
    height: 50vw;
    background-image: url('/assets/img/bgi.png');
    background-repeat: no-repeat;
-   background-size: cover;
+   background-size: 100vw;
    display: flex;
+   padding: 0 3vw;
+   overflow: scroll;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+
+   align-items: flex-end;
+
 }
+
+/* 모든 브라우저에서 스크롤바 제거 */
+.project-content::-webkit-scrollbar {
+   display: none;
+}
+
+.project-card {
+   margin-right: 5vw;
+}
+
+.project-content p {
+   align-items: flex-start;
+   font-size: 0.85vw;
+}
+
+.project-content h2 {
+   margin-bottom: 1vw;
+   font-size: 1.3vw;
+   font-weight: 700;
+}
+
 
 .project-image {
    cursor: pointer;
-   width: 10vw;
+   width: 30vw;
+   margin-bottom: 15vw;
 }
 
 /* 팝업 */
