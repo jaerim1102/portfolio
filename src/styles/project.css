@@ -16,7 +16,6 @@
    background-repeat: no-repeat;
    background-size: 100vw;
    display: flex;
-   padding: 0 3vw;
    overflow: scroll;
    -ms-overflow-style: none;
    scrollbar-width: none;
@@ -32,12 +31,12 @@
 }
 
 .project-card {
-   height: 100%;
-   margin-right: 7vw;
+   padding: 0 3vw;
+   height: 40vw;
    border-right: 1.75px solid #555;
 }
 
-.project-content p {
+.project-time {
    margin-top: 1vw;
    position: absolute;
    top: 0;
@@ -45,17 +44,21 @@
 }
 
 .project-content h2 {
-   margin-top: 10vw;
-   margin-bottom: 1vw;
-   font-size: 1vw;
+   margin-top: 4vw;
+   font-size: 1.5vw;
    font-weight: 700;
 }
 
+.project-ex {
+   margin-top: 1vw;
+   font-size: 0.95vw;
+}
 
 .project-image {
    cursor: pointer;
    width: 33vw;
-   margin-bottom: 1vw;
+   margin-top: -20vw;
+   margin-bottom: -30vw;
 }
 
 /* 팝업 */
@@ -74,8 +77,29 @@
 
 .popup-content {
    background-color: #fff;
+   padding: 3vw;
+
+}
+
+.popup-header {
+   display: flex;
+   justify-content: space-between;
+}
+
+.popup-header button {
+   width: 1vw;
+   height: 1vw;
+   border-radius: 50%;
+   border: none;
+   background-color: #FF4B97;
+   display: inline-block;
+   cursor: pointer;
 }
 
 .popup-image {
    width: 30vw;
+}
+
+.popup-icon {
+   width: 1vw;
 }

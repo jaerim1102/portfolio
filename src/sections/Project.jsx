@@ -55,7 +55,10 @@ const Project = () => {
             className="popup-content"
             onClick={(e) => e.stopPropagation()} // 팝업 내부 클릭 시 닫히지 않음
           >
-            <h2>{selectedProject.project_name}</h2>
+            <div className="popup-header">
+              <h2>{selectedProject.project_name}</h2>
+              <button className="popup-close" onClick={closePopup}></button>
+            </div>
             <img
               src={pb.getFileUrl(selectedProject, selectedProject.project_img)}
               alt={selectedProject.project_name}
@@ -75,23 +78,32 @@ const Project = () => {
               <strong>Additional Info:</strong> {selectedProject.project_etc}
             </p>
             <p>
-              <strong>URL:</strong>{" "}
               <a
                 href={selectedProject.project_url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {selectedProject.project_url}
+                <img
+                  src="/assets/img/url.svg"
+                  alt="Project Link"
+                  style={{ cursor: "pointer" }}
+                  className="popup-icon"
+                />
               </a>
             </p>
+
             <p>
-              <strong>GitHub:</strong>{" "}
               <a
                 href={selectedProject.project_github}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {selectedProject.project_github}
+                <img
+                  src="/assets/img/github.png"
+                  alt="Project Link"
+                  style={{ cursor: "pointer" }}
+                  className="popup-icon"
+                />
               </a>
             </p>
             <p>
@@ -101,9 +113,6 @@ const Project = () => {
                 ? selectedProject.project_stack.join(", ")
                 : "No stack provided"}
             </p>
-            <button className="popup-close" onClick={closePopup}>
-              Close
-            </button>
           </div>
         </div>
       )}
