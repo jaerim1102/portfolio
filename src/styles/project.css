@@ -2,7 +2,7 @@
    margin-top: 10vw;
 }
 
-.project-container h2 {
+.project-h2 {
    font-size: 2vw;
    font-weight: 500;
    border-bottom: 1.75px solid #555;
@@ -15,4 +15,9 @@
    background-image: url('/assets/img/bgi.png');
    background-repeat: no-repeat;
    background-size: cover;
+   display: flex;
+}
+
+.project-image {
+   width: 10vw;
 }
