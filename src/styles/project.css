@@ -61,6 +61,37 @@
    margin-bottom: -30vw;
 }
 
+.scroll-button {
+   position: absolute;
+   top: 240%;
+   transform: translateY(-50%);
+   background-color: #555;
+   color: #fff;
+   border: none;
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+   font-size: 1.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   z-index: 10;
+   opacity: 0.7;
+}
+
+.scroll-button:hover {
+   opacity: 1;
+}
+
+.scroll-button.left {
+   left: 10px;
+}
+
+.scroll-button.right {
+   right: 10px;
+}
+
 /* 팝업 */
 .popup-overlay {
    position: fixed;

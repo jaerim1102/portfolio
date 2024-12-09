@@ -1,26 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import pb from "../lib/pocketbase"; // PocketBase 인스턴스
 import "../styles/project.css";
 
 const Project = () => {
   const [projects, setProjects] = useState([]);
-  const [skills, setSkills] = useState({}); // 스킬 데이터를 저장
-  const [selectedProject, setSelectedProject] = useState(null); // 선택된 프로젝트
-  const [isPopupOpen, setIsPopupOpen] = useState(false); // 팝업 상태
+  const [skills, setSkills] = useState({});
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const projectContentRef = useRef(null); // project-content 참조
 
   useEffect(() => {
     const fetchProjectsAndSkills = async () => {
       try {
-        // 프로젝트 가져오기
         const projectRecords = await pb.collection("project").getList(1, 50);
         setProjects(projectRecords.items);
 
-        // 모든 스킬 데이터 가져오기
         const skillRecords = await pb.collection("skills").getFullList(200, {
-          fields: "id,skill_name", // 필요한 필드만 가져오기
+          fields: "id,skill_name",
         });
 
-        // 스킬 데이터를 객체로 변환 (id -> skill_name 매핑)
         const skillMap = skillRecords.reduce((acc, skill) => {
           acc[skill.id] = skill.skill_name;
           return acc;
@@ -36,32 +34,57 @@ const Project = () => {
   }, []);
 
   const openPopup = (project) => {
-    setSelectedProject(project); // 선택된 프로젝트 설정
-    setIsPopupOpen(true); // 팝업 열기
+    setSelectedProject(project);
+    setIsPopupOpen(true);
   };
 
   const closePopup = () => {
-    setSelectedProject(null); // 선택된 프로젝트 초기화
-    setIsPopupOpen(false); // 팝업 닫기
+    setSelectedProject(null);
+    setIsPopupOpen(false);
+  };
+
+  const scrollLeft = () => {
+    if (projectContentRef.current) {
+      projectContentRef.current.scrollLeft -= 300; // 왼쪽으로 300px 이동
+    }
+  };
+
+  const scrollRight = () => {
+    if (projectContentRef.current) {
+      projectContentRef.current.scrollLeft += 300; // 오른쪽으로 300px 이동
+    }
   };
 
   return (
     <div className="project-container">
       <h2 className="project-h2">Projects</h2>
-      <div className="project-content">
-        {projects.map((project) => (
-          <div key={project.id} className="project-card">
-            <p className="project-time">{project.Project_time}</p>
-            <h2>{project.project_name}</h2>
-            <p className="project-ex">{project.project_explanation}</p>
-            <img
-              src={pb.getFileUrl(project, project.project_img)}
-              alt={project.project_name}
-              className="project-image"
-              onClick={() => openPopup(project)} // 이미지 클릭 이벤트
-            />
-          </div>
-        ))}
+      <div className="project-wrapper">
+        {/* 왼쪽 화살표 */}
+        <button className="scroll-button left" onClick={scrollLeft}>
+          {"<"}
+        </button>
+
+        {/* 프로젝트 콘텐츠 */}
+        <div className="project-content" ref={projectContentRef}>
+          {projects.map((project) => (
+            <div key={project.id} className="project-card">
+              <p className="project-time">{project.Project_time}</p>
+              <h2>{project.project_name}</h2>
+              <p className="project-ex">{project.project_explanation}</p>
+              <img
+                src={pb.getFileUrl(project, project.project_img)}
+                alt={project.project_name}
+                className="project-image"
+                onClick={() => openPopup(project)} // 이미지 클릭 이벤트
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* 오른쪽 화살표 */}
+        <button className="scroll-button right" onClick={scrollRight}>
+          {">"}
+        </button>
       </div>
 
       {/* 팝업 */}
