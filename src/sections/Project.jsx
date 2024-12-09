@@ -4,20 +4,35 @@ import "../styles/project.css";
 
 const Project = () => {
   const [projects, setProjects] = useState([]);
+  const [skills, setSkills] = useState({}); // 스킬 데이터를 저장
   const [selectedProject, setSelectedProject] = useState(null); // 선택된 프로젝트
   const [isPopupOpen, setIsPopupOpen] = useState(false); // 팝업 상태
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchProjectsAndSkills = async () => {
       try {
-        const records = await pb.collection("project").getList(1, 50); // 1페이지에 50개 로드
-        setProjects(records.items);
+        // 프로젝트 가져오기
+        const projectRecords = await pb.collection("project").getList(1, 50);
+        setProjects(projectRecords.items);
+
+        // 모든 스킬 데이터 가져오기
+        const skillRecords = await pb.collection("skills").getFullList(200, {
+          fields: "id,skill_name", // 필요한 필드만 가져오기
+        });
+
+        // 스킬 데이터를 객체로 변환 (id -> skill_name 매핑)
+        const skillMap = skillRecords.reduce((acc, skill) => {
+          acc[skill.id] = skill.skill_name;
+          return acc;
+        }, {});
+
+        setSkills(skillMap);
       } catch (error) {
-        console.error("Error fetching projects:", error);
+        console.error("Error fetching projects or skills:", error);
       }
     };
 
-    fetchProjects();
+    fetchProjectsAndSkills();
   }, []);
 
   const openPopup = (project) => {
@@ -36,7 +51,7 @@ const Project = () => {
       <div className="project-content">
         {projects.map((project) => (
           <div key={project.id} className="project-card">
-            <p>{project.Project_time}</p>
+            <p className="project-time">{project.Project_time}</p>
             <h2>{project.project_name}</h2>
             <img
               src={pb.getFileUrl(project, project.project_img)}
@@ -91,7 +106,6 @@ const Project = () => {
                 />
               </a>
             </p>
-
             <p>
               <a
                 href={selectedProject.project_github}
@@ -110,7 +124,17 @@ const Project = () => {
               <strong>Stack:</strong>{" "}
               {selectedProject.project_stack &&
               selectedProject.project_stack.length > 0
-                ? selectedProject.project_stack.join(", ")
+                ? selectedProject.project_stack.map((skillId) =>
+                    skills[skillId] ? (
+                      <span key={skillId} className="skill-name">
+                        {skills[skillId]}
+                      </span>
+                    ) : (
+                      <span key={skillId} className="skill-name">
+                        Unknown Skill
+                      </span>
+                    )
+                  )
                 : "No stack provided"}
             </p>
           </div>
