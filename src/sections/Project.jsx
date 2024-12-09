@@ -45,13 +45,21 @@ const Project = () => {
 
   const scrollLeft = () => {
     if (projectContentRef.current) {
-      projectContentRef.current.scrollLeft -= 300; // 왼쪽으로 300px 이동
+      const cardWidth = projectContentRef.current.firstChild.offsetWidth; // 카드의 너비
+      projectContentRef.current.scrollBy({
+        left: -cardWidth, // 카드 너비만큼 왼쪽으로 이동
+        behavior: "smooth", // 부드러운 스크롤
+      });
     }
   };
 
   const scrollRight = () => {
     if (projectContentRef.current) {
-      projectContentRef.current.scrollLeft += 300; // 오른쪽으로 300px 이동
+      const cardWidth = projectContentRef.current.firstChild.offsetWidth; // 카드의 너비
+      projectContentRef.current.scrollBy({
+        left: cardWidth, // 카드 너비만큼 오른쪽으로 이동
+        behavior: "smooth", // 부드러운 스크롤
+      });
     }
   };
 
@@ -61,7 +69,7 @@ const Project = () => {
       <div className="project-wrapper">
         {/* 왼쪽 화살표 */}
         <button className="scroll-button left" onClick={scrollLeft}>
-          {"<"}
+          <img src="/assets/img/left.svg" alt="" />
         </button>
 
         {/* 프로젝트 콘텐츠 */}
@@ -83,7 +91,7 @@ const Project = () => {
 
         {/* 오른쪽 화살표 */}
         <button className="scroll-button right" onClick={scrollRight}>
-          {">"}
+          <img src="/assets/img/right.svg" alt="" />
         </button>
       </div>
 
