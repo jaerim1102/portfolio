@@ -2,14 +2,14 @@
    font-family: 'Druk Text Wide Trial Medium';
    font-style: normal;
    font-weight: normal;
-   src: local('Druk Text Wide Trial Medium'), url('../../public/assets/font/DrukWide-Medium-Trial.woff') format('woff');
+   src: local('Druk Text Wide Trial Medium'), url('/assets/font/DrukWide-Medium-Trial.woff') format('woff');
 }
 
 @font-face {
    font-family: 'Pixel Screen Font';
    font-style: normal;
    font-weight: normal;
-   src: local('pixelscreenfontlight'), url('../../public/assets/font/pixelscreenfontlight.ttf') format('truetype');
+   src: local('pixelscreenfontlight'), url('/assets/font/pixelscreenfontlight.ttf') format('truetype');
 }
 
 .home-title {

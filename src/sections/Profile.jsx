@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/profile.css";
-import ProfileImg from "../../public/assets/img/profile-img.png";
+import ProfileImg from "/assets/img/profile-img.png";
 import ProfileButton from "../components/ProfileButton";
 
 const Profile = ({ id }) => {
