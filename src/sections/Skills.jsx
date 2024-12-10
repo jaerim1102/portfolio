@@ -9,16 +9,29 @@ const Skills = ({ id }) => {
 
   useEffect(() => {
     // PocketBase 데이터 가져오기
+    const controller = new AbortController(); // AbortController 생성
+    const signal = controller.signal;
+
     const fetchSkills = async () => {
       try {
-        const records = await pb.collection("skills").getList(1, 50);
-        setSkills(records.items);
+        const records = await pb
+          .collection("skills")
+          .getList(1, 50, { signal });
+        setSkills(records.items); // 요청 성공 시 상태 업데이트
       } catch (error) {
-        console.error("Error fetching skills:", error);
+        if (error.name === "AbortError") {
+          console.log("Request was aborted");
+        } else {
+          console.error("Error fetching skills:", error);
+        }
       }
     };
 
     fetchSkills();
+
+    return () => {
+      controller.abort(); // 컴포넌트 언마운트 시 요청 취소
+    };
   }, []);
 
   useEffect(() => {
@@ -55,34 +68,42 @@ const Skills = ({ id }) => {
       </div>
       <table>
         <tbody>
-          {skills.map((skill) => (
-            <tr key={skill.id}>
-              <td className="skill-img-td">
-                <img
-                  src={pb.getFileUrl(skill, skill.skill_img)}
-                  alt={skill.skill_name}
-                  className="skill-img"
-                />
+          {skills.length > 0 ? (
+            skills.map((skill) => (
+              <tr key={skill.id}>
+                <td className="skill-img-td">
+                  <img
+                    src={pb.getFileUrl(skill, skill.skill_img)}
+                    alt={skill.skill_name}
+                    className="skill-img"
+                  />
+                </td>
+                <td className="skill-name">{skill.skill_name}</td>
+                <td className="progress-td">
+                  <div className="progress-bar">
+                    <div
+                      className={`progress-bar-fill ${
+                        visible ? "progress-bar-fill-animate" : ""
+                      }`}
+                      style={{
+                        width: `${visible ? skill.skill_proficiency : 0}%`,
+                      }}
+                    ></div>
+                  </div>
+                  <span className="proficiency-text">
+                    {skill.skill_proficiency}%
+                  </span>
+                </td>
+                <td className="skill-ex">{skill.skill_explanation}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="4" className="no-skills">
+                No skills available to display.
               </td>
-              <td className="skill-name">{skill.skill_name}</td>
-              <td className="progress-td">
-                <div className="progress-bar">
-                  <div
-                    className={`progress-bar-fill ${
-                      visible ? "progress-bar-fill-animate" : ""
-                    }`}
-                    style={{
-                      width: `${visible ? skill.skill_proficiency : 0}%`,
-                    }}
-                  ></div>
-                </div>
-                <span className="proficiency-text">
-                  {skill.skill_proficiency}%
-                </span>
-              </td>
-              <td className="skill-ex">{skill.skill_explanation}</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </div>

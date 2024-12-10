@@ -114,65 +114,68 @@ const Project = () => {
               </button>
             </div>
             <p className="popup-ex">{selectedProject.project_explanation}</p>
-            <img
-              src={pb.getFileUrl(selectedProject, selectedProject.project_img)}
-              alt={selectedProject.project_name}
-              className="popup-image"
-            />
             <p>
-              <strong>Team:</strong> {selectedProject.project_team}
-            </p>
-            <p>
-              <strong>My Role:</strong> {selectedProject.project_mine}
-            </p>
-            <p>
-              <strong>Additional Info:</strong> {selectedProject.project_etc}
-            </p>
-            <p>
-              <a
-                href={selectedProject.project_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/assets/img/url.svg"
-                  alt="Project Link"
-                  style={{ cursor: "pointer" }}
-                  className="popup-icon"
-                />
-              </a>
-            </p>
-            <p>
-              <a
-                href={selectedProject.project_github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/assets/img/github.png"
-                  alt="Project Link"
-                  style={{ cursor: "pointer" }}
-                  className="popup-icon"
-                />
-              </a>
-            </p>
-            <p>
-              <strong>Stack:</strong>{" "}
               {selectedProject.project_stack &&
               selectedProject.project_stack.length > 0
                 ? selectedProject.project_stack.map((skillId) =>
                     skills[skillId] ? (
-                      <span key={skillId} className="skill-name">
+                      <span key={skillId} className="popup-skill">
                         {skills[skillId]}
                       </span>
                     ) : (
-                      <span key={skillId} className="skill-name">
+                      <span key={skillId} className="popup-skill">
                         Unknown Skill
                       </span>
                     )
                   )
                 : "No stack provided"}
             </p>
+            <img
+              src={pb.getFileUrl(selectedProject, selectedProject.project_img)}
+              alt={selectedProject.project_name}
+              className="popup-image"
+            />
+            <div className="popup-info">
+              <p>
+                <strong>Team</strong> {selectedProject.project_team}
+              </p>
+              <p>
+                <strong>My Role</strong> {selectedProject.project_mine}
+              </p>
+              <p>
+                <strong>@</strong> {selectedProject.project_etc}
+              </p>
+            </div>
+            <div className="popup-url">
+              <p>
+                <a
+                  href={selectedProject.project_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/assets/img/url.svg"
+                    alt="Project Link"
+                    style={{ cursor: "pointer" }}
+                    className="popup-icon"
+                  />
+                </a>
+              </p>
+              <p>
+                <a
+                  href={selectedProject.project_github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/assets/img/github.png"
+                    alt="Project Link"
+                    style={{ cursor: "pointer" }}
+                    className="popup-icon"
+                  />
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       )}

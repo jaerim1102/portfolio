@@ -13,6 +13,16 @@ body {
       'Noto Sans KR',
       'Malgun Gothic',
       sans-serif;
+
+}
+
+.main {
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+}
+
+.main::-webkit-scrollbar {
+   display: none;
 }
 
 @media (max-width: 750px) {

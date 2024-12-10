@@ -74,6 +74,8 @@
 }
 
 .project-image {
+   border: 1.75px solid #555;
+
    cursor: pointer;
    width: 33vw;
    margin-top: -20vw;
@@ -128,6 +130,7 @@
 }
 
 .popup-content {
+   border-radius: 1vw;
    background-color: #fff;
    padding: 3vw;
 
@@ -136,7 +139,8 @@
 .popup-header {
    display: flex;
    justify-content: space-between;
-   margin-bottom: 1vw;
+   margin-bottom: 0.75vw;
+   padding-bottom: 0.75vw;
 }
 
 .popup-header h2 {
@@ -144,9 +148,28 @@
    font-weight: 700;
 }
 
+.popup-ex {
+   font-size: 0.75vw;
+   margin-bottom: 2vw;
+}
+
+.popup-info {
+   border-bottom: 1.75px solid #555;
+   font-size: 0.8vw;
+}
+
+.popup-info p {
+   margin-bottom: 1vw;
+}
+
+.popup-content strong {
+   font-weight: 700;
+}
+
 .popup-header button {
-   width: 1vw;
-   height: 1vw;
+   width: 1.7vw;
+   height: 1.7vw;
+   font-size: 1vw;
    border-radius: 50%;
    border: none;
    background-color: #FF4B97;
@@ -158,8 +181,25 @@
 
 .popup-image {
    width: 30vw;
+   margin: 1.5vw 0;
+}
+
+
+.popup-skill {
+   border: 1px solid #FF4B97;
+   background: #FF4B97;
+   color: #fff;
+   padding: 0.5vw;
+   border-radius: 30px;
+   margin-right: 0.2vw;
+}
+
+.popup-url {
+   margin-top: 1vw;
+   display: flex;
 }
 
 .popup-icon {
-   width: 1vw;
+   width: 1.5vw;
+   margin-right: 0.2vw;
 }
