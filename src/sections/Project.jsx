@@ -65,7 +65,12 @@ const Project = () => {
 
   return (
     <div className="project-container">
-      <h2 className="project-h2">Projects</h2>
+      <div className="project-header">
+        <h2 className="project-h2">Projects</h2>
+        <p>
+          <span>이미지 클릭 시</span> 자세한 정보를 보실 수 있습니다!
+        </p>
+      </div>
       <div className="project-wrapper">
         {/* 왼쪽 화살표 */}
         <button className="scroll-button left" onClick={scrollLeft}>
@@ -104,8 +109,11 @@ const Project = () => {
           >
             <div className="popup-header">
               <h2>{selectedProject.project_name}</h2>
-              <button className="popup-close" onClick={closePopup}></button>
+              <button className="popup-close" onClick={closePopup}>
+                X
+              </button>
             </div>
+            <p className="popup-ex">{selectedProject.project_explanation}</p>
             <img
               src={pb.getFileUrl(selectedProject, selectedProject.project_img)}
               alt={selectedProject.project_name}
@@ -113,10 +121,6 @@ const Project = () => {
             />
             <p>
               <strong>Team:</strong> {selectedProject.project_team}
-            </p>
-            <p>
-              <strong>Explanation:</strong>{" "}
-              {selectedProject.project_explanation}
             </p>
             <p>
               <strong>My Role:</strong> {selectedProject.project_mine}

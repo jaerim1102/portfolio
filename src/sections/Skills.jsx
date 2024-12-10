@@ -54,34 +54,36 @@ const Skills = ({ id }) => {
         </p>
       </div>
       <table>
-        {skills.map((skill) => (
-          <tr key={skill.id}>
-            <td className="skill-img-td">
-              <img
-                src={pb.getFileUrl(skill, skill.skill_img)}
-                alt={skill.skill_name}
-                className="skill-img"
-              />
-            </td>
-            <td className="skill-name">{skill.skill_name}</td>
-            <td className="progress-td">
-              <div className="progress-bar">
-                <div
-                  className={`progress-bar-fill ${
-                    visible ? "progress-bar-fill-animate" : ""
-                  }`}
-                  style={{
-                    width: `${visible ? skill.skill_proficiency : 0}%`, // 애니메이션 시작 시 0%에서 해당 값으로 채움
-                  }}
-                ></div>
-              </div>
-              <span className="proficiency-text">
-                {skill.skill_proficiency}%
-              </span>
-            </td>
-            <td className="skill-ex">{skill.skill_explanation}</td>
-          </tr>
-        ))}
+        <tbody>
+          {skills.map((skill) => (
+            <tr key={skill.id}>
+              <td className="skill-img-td">
+                <img
+                  src={pb.getFileUrl(skill, skill.skill_img)}
+                  alt={skill.skill_name}
+                  className="skill-img"
+                />
+              </td>
+              <td className="skill-name">{skill.skill_name}</td>
+              <td className="progress-td">
+                <div className="progress-bar">
+                  <div
+                    className={`progress-bar-fill ${
+                      visible ? "progress-bar-fill-animate" : ""
+                    }`}
+                    style={{
+                      width: `${visible ? skill.skill_proficiency : 0}%`,
+                    }}
+                  ></div>
+                </div>
+                <span className="proficiency-text">
+                  {skill.skill_proficiency}%
+                </span>
+              </td>
+              <td className="skill-ex">{skill.skill_explanation}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );

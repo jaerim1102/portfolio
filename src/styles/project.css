@@ -2,10 +2,29 @@
    margin-top: 10vw;
 }
 
+.project-header {
+   border-bottom: 1.75px solid #555;
+   display: flex;
+   position: relative;
+}
+
+.project-header p {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   margin-right: 2vw;
+   margin-bottom: 0.5vw;
+   font-size: 0.75vw;
+}
+
+.project-header span {
+   font-weight: 700;
+   font-size: 0.9vw;
+}
+
 .project-h2 {
    font-size: 2vw;
    font-weight: 500;
-   border-bottom: 1.75px solid #555;
    padding-bottom: 0.5vw;
    padding-left: 3vw;
 }
@@ -37,7 +56,7 @@
 }
 
 .project-time {
-   margin-top: 1vw;
+   margin-top: 1.5vw;
    position: absolute;
    top: 0;
    font-size: 0.85vw;
@@ -69,13 +88,11 @@
 
 .scroll-button {
    position: absolute;
-   top: 105%;
+   top: 40%;
    transform: translateY(-50%);
    border: none;
-   border-radius: 50%;
    width: 40px;
    height: 40px;
-   font-size: 1.5rem;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -119,6 +136,12 @@
 .popup-header {
    display: flex;
    justify-content: space-between;
+   margin-bottom: 1vw;
+}
+
+.popup-header h2 {
+   font-size: 1.5vw;
+   font-weight: 700;
 }
 
 .popup-header button {
@@ -129,6 +152,8 @@
    background-color: #FF4B97;
    display: inline-block;
    cursor: pointer;
+   align-items: center;
+   color: #fff;
 }
 
 .popup-image {
