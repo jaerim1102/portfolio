@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import pb from "../lib/pocketbase"; // PocketBase 인스턴스
 import "../styles/project.css";
 
-const Project = () => {
+const Project = ({ id }) => {
   const [projects, setProjects] = useState([]);
   const [skills, setSkills] = useState({});
   const [selectedProject, setSelectedProject] = useState(null);
@@ -64,11 +64,11 @@ const Project = () => {
   };
 
   return (
-    <div className="project-container">
+    <div id={id} className="project-container">
       <div className="project-header">
         <h2 className="project-h2">Projects</h2>
         <p>
-          <span>이미지 클릭 시</span> 자세한 정보를 보실 수 있습니다!
+          <span>이미지 클릭 시</span> 더 자세한 정보를 보실 수 있습니다!
         </p>
       </div>
       <div className="project-wrapper">

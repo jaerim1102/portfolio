@@ -13,7 +13,7 @@
 }
 
 .home-title {
-   margin-top: 11vh;
+   margin-top: 15vh;
    margin-left: 3vw;
 }
 
@@ -23,6 +23,10 @@
    flex-direction: column;
 }
 
+.home-title p {
+   font-size: 1vw;
+   font-weight: 700;
+}
 
 .home-serve-title span {
    display: inline-block;

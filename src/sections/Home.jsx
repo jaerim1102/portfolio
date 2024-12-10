@@ -47,6 +47,7 @@ const Home = ({ id }) => {
         <span>FRONT-END</span>
         <span>DEVELOPER</span>
       </h1>
+      <p>안녕하세용? ٩( 'ω' ) 저는 성장하는 개발자 김재림입니다 ( 'ω' )و</p>
     </div>
   );
 };
