@@ -9,6 +9,10 @@ const Profile = ({ id }) => {
       <div className="profile-left">
         <div className="profile">
           <h2>Profile</h2>
+
+          <button className="download-button">
+            자기소개서 <img src="/assets/img/download.svg" alt="다운로드" />
+          </button>
           <div className="profile-content">
             <div className="profile-details">
               <span>NAME</span>
