@@ -48,31 +48,43 @@ const Contact = ({ id }) => {
       {/* 이메일 폼 */}
       <form onSubmit={handleSubmit} className="email-form">
         <div className="user-info">
-          <input
-            type="text"
-            name="from_name"
-            placeholder="Name"
-            value={formData.from_name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="from_email"
-            placeholder="Email"
-            value={formData.from_email}
-            onChange={handleChange}
-            required
-          />
+          <div className="form-group">
+            <label htmlFor="from_name">보내시는 분</label>
+            <input
+              type="text"
+              id="from_name"
+              name="from_name"
+              placeholder="이름"
+              value={formData.from_name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="from_email">회신받으실 연락처</label>
+            <input
+              type="text"
+              id="from_email"
+              name="from_email"
+              placeholder="연락처"
+              value={formData.from_email}
+              onChange={handleChange}
+              required
+            />
+          </div>
         </div>
-        <textarea
-          name="message"
-          placeholder="Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        ></textarea>
-        <button type="submit">Send</button>
+        <div className="form-group message-form">
+          <label htmlFor="message">내용</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="내용"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+        <button type="submit">문의 메일 보내기</button>
         {isSent && (
           <p className="success-message">이메일이 성공적으로 전송되었습니다!</p>
         )}
