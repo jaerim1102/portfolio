@@ -21,6 +21,11 @@ const Menu = () => {
             SKILLS
           </Link>
         </li>
+        <li>
+          <Link to="section5" smooth={true} duration={500}>
+            CONTACT
+          </Link>
+        </li>
       </ul>
     </div>
   );

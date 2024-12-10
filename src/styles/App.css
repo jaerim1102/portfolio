@@ -13,7 +13,7 @@ body {
       'Noto Sans KR',
       'Malgun Gothic',
       sans-serif;
-
+   overflow-x: hidden;
 }
 
 .main {

@@ -1,0 +1,16 @@
+.contact-container {
+   margin-top: 25vh;
+}
+
+.contact-container h2 {
+   padding-left: 3vw;
+   margin-bottom: 3vw;
+   border-bottom: 1.75px solid #000;
+   font-size: 2vw;
+   font-weight: 500;
+   padding-bottom: 0.5vw;
+}
+
+.contact-list img {
+   width: 3vw;
+}
