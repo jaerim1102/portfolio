@@ -47,25 +47,27 @@ const Contact = ({ id }) => {
 
       {/* 이메일 폼 */}
       <form onSubmit={handleSubmit} className="email-form">
-        <input
-          type="text"
-          name="from_name"
-          placeholder="Your Name"
-          value={formData.from_name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="from_email"
-          placeholder="Your Email"
-          value={formData.from_email}
-          onChange={handleChange}
-          required
-        />
+        <div className="user-info">
+          <input
+            type="text"
+            name="from_name"
+            placeholder="Name"
+            value={formData.from_name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="from_email"
+            placeholder="Email"
+            value={formData.from_email}
+            onChange={handleChange}
+            required
+          />
+        </div>
         <textarea
           name="message"
-          placeholder="Your Message"
+          placeholder="Message"
           value={formData.message}
           onChange={handleChange}
           required
