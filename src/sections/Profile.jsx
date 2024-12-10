@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/profile.css";
 import ProfileImg from "/assets/img/profile-img.png";
 import ProfileButton from "../components/ProfileButton";
+import DownloadButton from "../components/DownloadButton";
 
 const Profile = ({ id }) => {
   return (
@@ -9,10 +10,7 @@ const Profile = ({ id }) => {
       <div className="profile-left">
         <div className="profile">
           <h2>Profile</h2>
-
-          <button className="download-button">
-            자기소개서 <img src="/assets/img/download.svg" alt="다운로드" />
-          </button>
+          <DownloadButton />
           <div className="profile-content">
             <div className="profile-details">
               <span>NAME</span>

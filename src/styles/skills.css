@@ -40,8 +40,8 @@ td {
 }
 
 .skill-img {
-   width: 10vw;
-   height: 10vw;
+   width: 8vw;
+   height: 8vw;
    object-fit: contain;
 }
 
@@ -52,6 +52,7 @@ td {
 .skill-name {
    padding-top: 2vw;
    padding-left: 3vw;
+   font-weight: 500;
 }
 
 
