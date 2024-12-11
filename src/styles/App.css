@@ -25,8 +25,41 @@ body {
    display: none;
 }
 
-@media (max-width: 750px) {
+.main-mobile {
+   display: none;
+}
+
+@media (max-width: 760px) {
    .main {
       display: none;
+   }
+
+   .main-mobile {
+      display: contents;
+      text-align: center;
+   }
+
+   .main-mobile h2 {
+      margin-top: 40vh;
+      font-size: 3vw;
+      font-weight: 700;
+      line-height: 150%;
+   }
+
+   .main-mobile span {
+      color: #FF4B97;
+   }
+
+   .main-mobile p {
+      margin-top: 1vw;
+   }
+
+   .main-list {
+      margin-top: 3vw;
+   }
+
+   .main-list img {
+      width: 5vw;
+      margin-right: 1vw;
    }
 }
