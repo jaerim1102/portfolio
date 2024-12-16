@@ -15,13 +15,13 @@ const Profile = ({ id }) => {
             <div className="profile-details">
               <span>NAME</span>
               <span>BIRTH</span>
-              <span>H.P.</span>
+              <span>HOME</span>
               <span>E-MAIL</span>
             </div>
             <div className="profile-info">
               <p>김재림 / KIM JAERIM</p>
-              <p>2001.11.02</p>
-              <p>010-4075-1175</p>
+              <p>2001 . 11</p>
+              <p>경기도 의왕시</p>
               <p>jaerim1102@naver.com</p>
             </div>
           </div>
