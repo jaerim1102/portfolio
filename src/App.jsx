@@ -24,7 +24,7 @@ const App = () => {
           안녕하세용? <br /> <span>프론트엔드 개발자 김재림</span>입니다. <br />{" "}
           웹 환경에서 접속해 주세요!
         </h2>
-        <p>010-4075-1175</p>
+        {/* <p>010-4075-1175</p> */}
         <p>jaerim1102@naver.com</p>
         <div className="main-list">
           <a
