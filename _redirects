@@ -1,0 +1,6 @@
+# HTTPS 강제 리다이렉트
+https://jaerim.kr/* https://www.jaerim.kr/:splat 301!
+http://jaerim.kr/* https://www.jaerim.kr/:splat 301!
+
+# SPA(Single Page Application) 설정
+/* /index.html 200
