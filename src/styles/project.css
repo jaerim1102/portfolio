@@ -128,13 +128,20 @@
    justify-content: center;
    align-items: center;
    z-index: 9999;
+   overflow-y: scroll;
 }
 
 .popup-content {
+   margin: 0 auto;
+   margin-top: 19vw;
    border-radius: 1vw;
    background-color: #fff;
    padding: 3vw;
 
+}
+
+.sub-image {
+   display: flex;
 }
 
 .popup-header {
@@ -155,7 +162,6 @@
 }
 
 .popup-info {
-   border-bottom: 1.75px solid #555;
    font-size: 0.8vw;
 }
 
@@ -196,7 +202,7 @@
 }
 
 .popup-url {
-   margin-top: 1vw;
+   margin-bottom: 0.5vw;
    display: flex;
 }
 

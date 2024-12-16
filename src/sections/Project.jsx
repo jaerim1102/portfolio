@@ -135,17 +135,6 @@ const Project = ({ id }) => {
               alt={selectedProject.project_name}
               className="popup-image"
             />
-            <div className="popup-info">
-              <p>
-                <strong>Team</strong> {selectedProject.project_team}
-              </p>
-              <p>
-                <strong>My Role</strong> {selectedProject.project_mine}
-              </p>
-              <p>
-                <strong>@</strong> {selectedProject.project_etc}
-              </p>
-            </div>
             <div className="popup-url">
               <p>
                 <a
@@ -176,6 +165,29 @@ const Project = ({ id }) => {
                 </a>
               </p>
             </div>
+            <div className="popup-info">
+              <p>
+                <strong>Team</strong> {selectedProject.project_team}
+              </p>
+              <p>
+                <strong>My Role</strong> {selectedProject.project_mine}
+              </p>
+              <p>
+                <strong>@</strong> {selectedProject.project_etc}
+              </p>
+            </div>
+            {selectedProject.project_page &&
+              selectedProject.project_page.length > 0 &&
+              selectedProject.project_page.map((fileName, index) => (
+                <img
+                  key={index}
+                  src={pb.getFileUrl(selectedProject, fileName)} // 각 파일 URL 생성
+                  alt={`${selectedProject.project_name} - ${index + 1}`}
+                  className="popup-image sub-image"
+                  style={{ marginBottom: "10px" }} // 이미지 사이 간격
+                  loading="lazy"
+                />
+              ))}
           </div>
         </div>
       )}
