@@ -84,6 +84,36 @@ const Project = ({ id }) => {
               <p className="project-time">{project.Project_time}</p>
               <h2>{project.project_name}</h2>
               <p className="project-ex">{project.project_explanation}</p>
+              <div className="popup-url">
+                <p>
+                  <a
+                    href={project.project_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/assets/img/url.svg"
+                      alt="Project Link"
+                      style={{ cursor: "pointer" }}
+                      className="popup-icon"
+                    />
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href={project.project_github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/assets/img/github.png"
+                      alt="Project Link"
+                      style={{ cursor: "pointer" }}
+                      className="popup-icon"
+                    />
+                  </a>
+                </p>
+              </div>
               <img
                 src={pb.getFileUrl(project, project.project_img)}
                 alt={project.project_name}
@@ -135,36 +165,7 @@ const Project = ({ id }) => {
               alt={selectedProject.project_name}
               className="popup-image"
             />
-            <div className="popup-url">
-              <p>
-                <a
-                  href={selectedProject.project_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/assets/img/url.svg"
-                    alt="Project Link"
-                    style={{ cursor: "pointer" }}
-                    className="popup-icon"
-                  />
-                </a>
-              </p>
-              <p>
-                <a
-                  href={selectedProject.project_github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/assets/img/github.png"
-                    alt="Project Link"
-                    style={{ cursor: "pointer" }}
-                    className="popup-icon"
-                  />
-                </a>
-              </p>
-            </div>
+
             <div className="popup-info">
               <p>
                 <strong>Team</strong> {selectedProject.project_team}
