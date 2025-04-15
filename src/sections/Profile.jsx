@@ -21,7 +21,7 @@ const Profile = ({ id }) => {
             <div className="profile-info">
               <p>김재림 / KIM JAERIM</p>
               <p>2001 . 11</p>
-              <p>경기도 의왕시</p>
+              <p>서울특별시 동작구</p>
               <p>jaerim1102@naver.com</p>
             </div>
           </div>
